@@ -17,6 +17,14 @@ docs/interview/
 docs/learning-roadmap/
 docs/README.md
 
+#  Private study library: pattern cheat sheets, learning roadmap, progress
+#  tracker and interview revision material. Same reasoning as docs/ above -
+#  excluded by directory, never by a blanket *.md rule.
+private-notes/
+private-notes/roadmap/
+private-notes/interview-revision/
+private-notes/trackers/
+
 #  Loose personal notes, wherever they land.
 NOTES.md
 MY-NOTES.md

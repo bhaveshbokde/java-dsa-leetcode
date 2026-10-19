@@ -1,7 +1,7 @@
 # Java DSA Mastery
 
 Data structures, algorithms and interview problems, implemented and tested in
-Java 21. **71 problems** across **33 topic areas**, every one
+Java 21. **85 problems** across **33 topic areas**, every one
 with a compilable solution and a JUnit test class.
 
 This is a study repository rather than a library. The value is meant to be in
@@ -17,12 +17,13 @@ get wrong.
 
 | | |
 |---|---|
-| Problems implemented | **71** |
+| Problems implemented | **85** |
 | Topic areas | **33** |
-| From LeetCode | 67 |
+| Distinct LeetCode problems | 90 |
 | Classic algorithms / Java exercises | 4 |
-| Tests | **533**, all passing |
-| Line coverage | **97.6%** (measured by JaCoCo, not estimated) |
+| Tests | **636**, all passing |
+| Line coverage | **99.1%** (measured by JaCoCo, not estimated) |
+| Blind 75 coverage (non-premium) | **55/69** |
 | Checkstyle violations | 0 |
 
 Full listing with IDs, difficulty, patterns and file paths:
@@ -32,7 +33,7 @@ Full listing with IDs, difficulty, patterns and file paths:
 
 | Easy | Medium | Hard |
 |---|---|---|
-| 19 | 49 | 6 |
+| 24 | 58 | 6 |
 
 Difficulty follows LeetCode where a problem ID exists. A few entries cover two
 related problems with one implementation (Linked List Cycle I and II, Course
@@ -54,7 +55,7 @@ dependency is the JDK; JUnit 5 is the sole test dependency.
 ## Build and test
 
 ```bash
-./mvnw clean test       # compile, run Checkstyle, run all 533 tests
+./mvnw clean test       # compile, run Checkstyle, run all 636 tests
 ./mvnw clean verify     # the above, plus the JaCoCo coverage report
 ./mvnw clean package    # build the jar
 ```
@@ -223,11 +224,12 @@ locally.
 
 ## Honest limitations
 
-- **71 problems is a starting collection, not comprehensive coverage.**
-  Every topic area has at least one worked problem and the structure scales, but
-  several areas have only one or two. Notable gaps include advanced DP beyond
-  edit distance, segment trees with lazy propagation, minimum spanning trees,
-  Bellman-Ford as a first-class solution, and string algorithms beyond KMP.
+- **85 problems is a growing collection, not comprehensive coverage.**
+  Non-premium Blind 75 coverage is **55/69**, measured rather than claimed; the
+  14 remaining are listed in the local tracker. Six further Blind 75 problems are
+  LeetCode Premium and not freely accessible, so they are untouched. Notable gaps
+  beyond that list include segment trees with lazy propagation, minimum spanning
+  trees, Bellman-Ford as a first-class solution, and string algorithms beyond KMP.
 - **No performance benchmarks.** Complexity claims come from analysis, and the
   large-input tests only confirm that an algorithm does not degrade
   catastrophically. No timings have been measured, so none are quoted.

@@ -54,16 +54,21 @@ public final class Trees {
     /**
      * Serialises back to level-order with trailing nulls trimmed, so that a
      * round trip through {@link #of} is comparable to the original notation.
+     *
+     * <p>Uses {@link java.util.LinkedList} rather than {@link ArrayDeque}
+     * because the queue must hold {@code null} to represent absent children,
+     * and {@code ArrayDeque} rejects null elements with a
+     * {@link NullPointerException}.
      */
     public static List<Integer> toLevelOrder(TreeNode root) {
         List<Integer> out = new ArrayList<>();
         if (root == null) {
             return out;
         }
-        Deque<TreeNode> queue = new ArrayDeque<>();
+        java.util.Queue<TreeNode> queue = new java.util.LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+            TreeNode node = queue.remove();
             if (node == null) {
                 out.add(null);
                 continue;
