@@ -1,6 +1,6 @@
 # Problem Index
 
-**85 implemented entries** across **33 topic areas**. Every entry has a
+**99 implemented entries** across **33 topic areas**. Every entry has a
 compilable Java solution and a JUnit test class; both paths are given below.
 
 Some entries cover more than one LeetCode problem where the problems share an
@@ -16,15 +16,15 @@ than LeetCode problems, and are labelled as such.
 
 | | Count |
 |---|---|
-| Total entries | **85** |
-| Distinct LeetCode problems | 90 |
+| Total entries | **99** |
+| Distinct LeetCode problems | 104 |
 | Topic areas | 33 |
-| Entries from LeetCode | 81 |
+| Entries from LeetCode | 95 |
 | Classic algorithms / Java exercises | 4 |
 | Tagged Easy | 24 |
-| Tagged Medium | 58 |
-| Tagged Hard | 6 |
-| Blind 75 coverage (non-premium) | **55/69** |
+| Tagged Medium | 67 |
+| Tagged Hard | 11 |
+| Blind 75 coverage (non-premium) | **69/69** |
 
 Difficulty follows LeetCode where an ID exists; entries covering two problems
 list both labels. Non-LeetCode entries are labelled by judgement.
@@ -83,6 +83,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 | 424 | Longest Repeating Character Replacement | Medium | window with budget | [`LongestRepeatingCharacterReplacement.java`](src/main/java/com/bhavesh/dsa/slidingwindow/LongestRepeatingCharacterReplacement.java) | [`LongestRepeatingCharacterReplacementTest.java`](src/test/java/com/bhavesh/dsa/slidingwindow/LongestRepeatingCharacterReplacementTest.java) |
 | 3 | Longest Substring Without Repeating Characters | Medium | variable window | [`LongestSubstringWithoutRepeating.java`](src/main/java/com/bhavesh/dsa/slidingwindow/LongestSubstringWithoutRepeating.java) | [`LongestSubstringWithoutRepeatingTest.java`](src/test/java/com/bhavesh/dsa/slidingwindow/LongestSubstringWithoutRepeatingTest.java) |
 | 209 | Minimum Size Subarray Sum | Medium | expand-then-shrink window | [`MinimumSizeSubarraySum.java`](src/main/java/com/bhavesh/dsa/slidingwindow/MinimumSizeSubarraySum.java) | [`MinimumSizeSubarraySumTest.java`](src/test/java/com/bhavesh/dsa/slidingwindow/MinimumSizeSubarraySumTest.java) |
+| 76 | Minimum Window Substring | Hard | variable window + deficit counter | [`MinimumWindowSubstring.java`](src/main/java/com/bhavesh/dsa/slidingwindow/MinimumWindowSubstring.java) | [`MinimumWindowSubstringTest.java`](src/test/java/com/bhavesh/dsa/slidingwindow/MinimumWindowSubstringTest.java) |
 
 ## Prefix sums & difference arrays
 
@@ -98,6 +99,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 |---|---|---|---|---|---|
 | 704 | Binary Search (+ lower/upper bound) | Easy | halving search | [`BinarySearch.java`](src/main/java/com/bhavesh/dsa/binarysearch/BinarySearch.java) | [`BinarySearchTest.java`](src/test/java/com/bhavesh/dsa/binarysearch/BinarySearchTest.java) |
 | 34 | Find First and Last Position of Element | Medium | boundary searches | [`FindFirstAndLastPosition.java`](src/main/java/com/bhavesh/dsa/binarysearch/FindFirstAndLastPosition.java) | [`FindFirstAndLastPositionTest.java`](src/test/java/com/bhavesh/dsa/binarysearch/FindFirstAndLastPositionTest.java) |
+| 153 | Find Minimum in Rotated Sorted Array | Medium | pivot search against nums[high] | [`FindMinimumInRotatedSortedArray.java`](src/main/java/com/bhavesh/dsa/binarysearch/FindMinimumInRotatedSortedArray.java) | [`FindMinimumInRotatedSortedArrayTest.java`](src/test/java/com/bhavesh/dsa/binarysearch/FindMinimumInRotatedSortedArrayTest.java) |
 | 875 | Koko Eating Bananas | Medium | binary search on answer | [`KokoEatingBananas.java`](src/main/java/com/bhavesh/dsa/binarysearch/KokoEatingBananas.java) | [`KokoEatingBananasTest.java`](src/test/java/com/bhavesh/dsa/binarysearch/KokoEatingBananasTest.java) |
 | 33 | Search in Rotated Sorted Array | Medium | structural binary search | [`SearchInRotatedSortedArray.java`](src/main/java/com/bhavesh/dsa/binarysearch/SearchInRotatedSortedArray.java) | [`SearchInRotatedSortedArrayTest.java`](src/test/java/com/bhavesh/dsa/binarysearch/SearchInRotatedSortedArrayTest.java) |
 
@@ -121,6 +123,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
 | 141, 142 | Linked List Cycle I and II | Easy, Medium | Floyd's cycle detection | [`LinkedListCycle.java`](src/main/java/com/bhavesh/dsa/linkedlist/LinkedListCycle.java) | [`LinkedListCycleTest.java`](src/test/java/com/bhavesh/dsa/linkedlist/LinkedListCycleTest.java) |
+| 23 | Merge k Sorted Lists | Hard | min-heap over k heads | [`MergeKSortedLists.java`](src/main/java/com/bhavesh/dsa/linkedlist/MergeKSortedLists.java) | [`MergeKSortedListsTest.java`](src/test/java/com/bhavesh/dsa/linkedlist/MergeKSortedListsTest.java) |
 | 21 | Merge Two Sorted Lists | Easy | dummy head merge | [`MergeTwoSortedLists.java`](src/main/java/com/bhavesh/dsa/linkedlist/MergeTwoSortedLists.java) | [`MergeTwoSortedListsTest.java`](src/test/java/com/bhavesh/dsa/linkedlist/MergeTwoSortedListsTest.java) |
 | 19 | Remove Nth Node From End of List | Medium | gap two pointers + dummy head | [`RemoveNthFromEnd.java`](src/main/java/com/bhavesh/dsa/linkedlist/RemoveNthFromEnd.java) | [`RemoveNthFromEndTest.java`](src/test/java/com/bhavesh/dsa/linkedlist/RemoveNthFromEndTest.java) |
 | 143 | Reorder List | Medium | split, reverse, alternate merge | [`ReorderList.java`](src/main/java/com/bhavesh/dsa/linkedlist/ReorderList.java) | [`ReorderListTest.java`](src/test/java/com/bhavesh/dsa/linkedlist/ReorderListTest.java) |
@@ -157,9 +160,11 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
+| 39 | Combination Sum | Medium | unbounded combination backtracking | [`CombinationSum.java`](src/main/java/com/bhavesh/dsa/backtracking/CombinationSum.java) | [`CombinationSumTest.java`](src/test/java/com/bhavesh/dsa/backtracking/CombinationSumTest.java) |
 | 51 | N-Queens | Hard | pruned backtracking | [`NQueens.java`](src/main/java/com/bhavesh/dsa/backtracking/NQueens.java) | [`NQueensTest.java`](src/test/java/com/bhavesh/dsa/backtracking/NQueensTest.java) |
 | 46 | Permutations | Medium | swap-based backtracking | [`Permutations.java`](src/main/java/com/bhavesh/dsa/backtracking/Permutations.java) | [`PermutationsTest.java`](src/test/java/com/bhavesh/dsa/backtracking/PermutationsTest.java) |
 | 78 | Subsets | Medium | include/exclude tree | [`Subsets.java`](src/main/java/com/bhavesh/dsa/backtracking/Subsets.java) | [`SubsetsTest.java`](src/test/java/com/bhavesh/dsa/backtracking/SubsetsTest.java) |
+| 79 | Word Search | Medium | grid backtracking, in-place marking | [`WordSearch.java`](src/main/java/com/bhavesh/dsa/backtracking/WordSearch.java) | [`WordSearchTest.java`](src/test/java/com/bhavesh/dsa/backtracking/WordSearchTest.java) |
 
 ## Bit manipulation
 
@@ -181,7 +186,9 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
+| 57 | Insert Interval | Medium | three-region sweep | [`InsertInterval.java`](src/main/java/com/bhavesh/dsa/intervals/InsertInterval.java) | [`InsertIntervalTest.java`](src/test/java/com/bhavesh/dsa/intervals/InsertIntervalTest.java) |
 | 56 | Merge Intervals | Medium | sort + sweep | [`MergeIntervals.java`](src/main/java/com/bhavesh/dsa/intervals/MergeIntervals.java) | [`MergeIntervalsTest.java`](src/test/java/com/bhavesh/dsa/intervals/MergeIntervalsTest.java) |
+| 435 | Non-overlapping Intervals | Medium | activity selection by end time | [`NonOverlappingIntervals.java`](src/main/java/com/bhavesh/dsa/intervals/NonOverlappingIntervals.java) | [`NonOverlappingIntervalsTest.java`](src/test/java/com/bhavesh/dsa/intervals/NonOverlappingIntervalsTest.java) |
 
 ## Trees
 
@@ -193,6 +200,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 | 226 | Invert Binary Tree | Easy | mirror recursion | [`InvertBinaryTree.java`](src/main/java/com/bhavesh/dsa/trees/InvertBinaryTree.java) | [`InvertBinaryTreeTest.java`](src/test/java/com/bhavesh/dsa/trees/InvertBinaryTreeTest.java) |
 | 236, 235 | Lowest Common Ancestor (tree and BST) | Medium | post-order aggregation | [`LowestCommonAncestor.java`](src/main/java/com/bhavesh/dsa/trees/LowestCommonAncestor.java) | [`LowestCommonAncestorTest.java`](src/test/java/com/bhavesh/dsa/trees/LowestCommonAncestorTest.java) |
 | 100 | Same Tree | Easy | structural comparison | [`SameTree.java`](src/main/java/com/bhavesh/dsa/trees/SameTree.java) | [`SameTreeTest.java`](src/test/java/com/bhavesh/dsa/trees/SameTreeTest.java) |
+| 297 | Serialize and Deserialize Binary Tree | Hard | preorder with null markers | [`SerializeDeserializeBinaryTree.java`](src/main/java/com/bhavesh/dsa/trees/SerializeDeserializeBinaryTree.java) | [`SerializeDeserializeBinaryTreeTest.java`](src/test/java/com/bhavesh/dsa/trees/SerializeDeserializeBinaryTreeTest.java) |
 | 572 | Subtree of Another Tree | Easy | subtree matching | [`SubtreeOfAnotherTree.java`](src/main/java/com/bhavesh/dsa/trees/SubtreeOfAnotherTree.java) | [`SubtreeOfAnotherTreeTest.java`](src/test/java/com/bhavesh/dsa/trees/SubtreeOfAnotherTreeTest.java) |
 
 ## Binary search trees
@@ -207,6 +215,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
 | 215 | Kth Largest Element in an Array | Medium | min-heap / quickselect | [`KthLargestElement.java`](src/main/java/com/bhavesh/dsa/heaps/KthLargestElement.java) | [`KthLargestElementTest.java`](src/test/java/com/bhavesh/dsa/heaps/KthLargestElementTest.java) |
+| 295 | Find Median from Data Stream | Hard | two balanced heaps | [`MedianFinder.java`](src/main/java/com/bhavesh/dsa/heaps/MedianFinder.java) | [`MedianFinderTest.java`](src/test/java/com/bhavesh/dsa/heaps/MedianFinderTest.java) |
 | 347 | Top K Frequent Elements | Medium | bucket sort by frequency | [`TopKFrequentElements.java`](src/main/java/com/bhavesh/dsa/heaps/TopKFrequentElements.java) | [`TopKFrequentElementsTest.java`](src/test/java/com/bhavesh/dsa/heaps/TopKFrequentElementsTest.java) |
 
 ## Tries
@@ -214,13 +223,17 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
 | 208 | Implement Trie (Prefix Tree) | Medium | prefix tree | [`Trie.java`](src/main/java/com/bhavesh/dsa/tries/Trie.java) | [`TrieTest.java`](src/test/java/com/bhavesh/dsa/tries/TrieTest.java) |
+| 211 | Design Add and Search Words | Medium | trie with wildcard branching | [`WordDictionary.java`](src/main/java/com/bhavesh/dsa/tries/WordDictionary.java) | [`WordDictionaryTest.java`](src/test/java/com/bhavesh/dsa/tries/WordDictionaryTest.java) |
+| 212 | Word Search II | Hard | trie-pruned grid search | [`WordSearchII.java`](src/main/java/com/bhavesh/dsa/tries/WordSearchII.java) | [`WordSearchIITest.java`](src/test/java/com/bhavesh/dsa/tries/WordSearchIITest.java) |
 
 ## Graphs
 
 | ID | Problem | Difficulty | Key pattern | Solution | Test |
 |---|---|---|---|---|---|
+| 133 | Clone Graph | Medium | BFS with original-to-clone map | [`CloneGraph.java`](src/main/java/com/bhavesh/dsa/graphs/CloneGraph.java) | [`CloneGraphTest.java`](src/test/java/com/bhavesh/dsa/graphs/CloneGraphTest.java) |
 | 207, 210 | Course Schedule I and II | Medium | Kahn topological sort | [`CourseSchedule.java`](src/main/java/com/bhavesh/dsa/graphs/CourseSchedule.java) | [`CourseScheduleTest.java`](src/test/java/com/bhavesh/dsa/graphs/CourseScheduleTest.java) |
 | 200 | Number of Islands | Medium | flood fill (BFS) | [`NumberOfIslands.java`](src/main/java/com/bhavesh/dsa/graphs/NumberOfIslands.java) | [`NumberOfIslandsTest.java`](src/test/java/com/bhavesh/dsa/graphs/NumberOfIslandsTest.java) |
+| 417 | Pacific Atlantic Water Flow | Medium | reverse search from both borders | [`PacificAtlanticWaterFlow.java`](src/main/java/com/bhavesh/dsa/graphs/PacificAtlanticWaterFlow.java) | [`PacificAtlanticWaterFlowTest.java`](src/test/java/com/bhavesh/dsa/graphs/PacificAtlanticWaterFlowTest.java) |
 
 ## Union-Find
 
@@ -235,6 +248,7 @@ ones are not freely accessible. It is a measured figure, not an aspiration.
 |---|---|---|---|---|---|
 | 70 | Climbing Stairs | Easy | linear recurrence | [`ClimbingStairs.java`](src/main/java/com/bhavesh/dsa/dp/ClimbingStairs.java) | [`ClimbingStairsTest.java`](src/test/java/com/bhavesh/dsa/dp/ClimbingStairsTest.java) |
 | 322 | Coin Change | Medium | unbounded knapsack | [`CoinChange.java`](src/main/java/com/bhavesh/dsa/dp/CoinChange.java) | [`CoinChangeTest.java`](src/test/java/com/bhavesh/dsa/dp/CoinChangeTest.java) |
+| 91 | Decode Ways | Medium | linear DP with validity tests | [`DecodeWays.java`](src/main/java/com/bhavesh/dsa/dp/DecodeWays.java) | [`DecodeWaysTest.java`](src/test/java/com/bhavesh/dsa/dp/DecodeWaysTest.java) |
 | 198, 213 | House Robber I and II | Medium | take-or-skip DP | [`HouseRobber.java`](src/main/java/com/bhavesh/dsa/dp/HouseRobber.java) | [`HouseRobberTest.java`](src/test/java/com/bhavesh/dsa/dp/HouseRobberTest.java) |
 | 1143 | Longest Common Subsequence | Medium | two-sequence grid DP | [`LongestCommonSubsequence.java`](src/main/java/com/bhavesh/dsa/dp/LongestCommonSubsequence.java) | [`LongestCommonSubsequenceTest.java`](src/test/java/com/bhavesh/dsa/dp/LongestCommonSubsequenceTest.java) |
 | 300 | Longest Increasing Subsequence | Medium | patience sorting | [`LongestIncreasingSubsequence.java`](src/main/java/com/bhavesh/dsa/dp/LongestIncreasingSubsequence.java) | [`LongestIncreasingSubsequenceTest.java`](src/test/java/com/bhavesh/dsa/dp/LongestIncreasingSubsequenceTest.java) |
