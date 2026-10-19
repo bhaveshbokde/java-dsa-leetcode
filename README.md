@@ -9,7 +9,7 @@ the reasoning: each solution carries a comment explaining *why* that algorithm,
 what the straightforward alternative costs, and which detail would be easy to
 get wrong.
 
-[![CI](https://github.com/bhaveshbokde/java-dsa-mastery/actions/workflows/ci.yml/badge.svg)](https://github.com/bhaveshbokde/java-dsa-mastery/actions/workflows/ci.yml)
+[![CI](https://github.com/bhaveshbokde/java-dsa-leetcode/actions/workflows/ci.yml/badge.svg)](https://github.com/bhaveshbokde/java-dsa-leetcode/actions/workflows/ci.yml)
 
 ---
 

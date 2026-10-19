@@ -14,11 +14,11 @@
         is test-scoped.
     -->
     <groupId>com.bhavesh</groupId>
-    <artifactId>java-dsa-mastery</artifactId>
+    <artifactId>java-dsa-leetcode</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>java-dsa-mastery</name>
+    <name>java-dsa-leetcode</name>
     <description>Data structures, algorithms and interview problems implemented and tested in Java 21</description>
 
     <properties>
