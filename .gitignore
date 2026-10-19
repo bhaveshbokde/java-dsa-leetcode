@@ -1,0 +1,88 @@
+# =============================================================================
+#  Private interview-preparation material — never publish
+# =============================================================================
+#  The whole docs/ tree is personal study material: per-problem explanation
+#  documents, interview notes and the learning roadmap. It stays on local disk.
+#
+#  This is deliberately a directory rule, not a blanket *.md rule. The public
+#  documentation lives at the repository root (README.md, PROBLEM-INDEX.md)
+#  and in templates/, so none of it is affected by the line below.
+docs/
+
+#  Stated again per subtree, so that adding a public file under docs/ later is
+#  a conscious decision (it would need a matching negation) rather than an
+#  accident caused by someone deleting the single line above.
+docs/solutions/
+docs/interview/
+docs/learning-roadmap/
+docs/README.md
+
+#  Loose personal notes, wherever they land.
+NOTES.md
+MY-NOTES.md
+SCRATCH.md
+REVISION-*.md
+PERSONAL-*.md
+INTERVIEW-*.md
+*-INTERVIEW.md
+LEARNING-ROADMAP.md
+STUDY-*.md
+PROGRESS-PRIVATE.md
+
+# =============================================================================
+#  Build output
+# =============================================================================
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+!.mvn/wrapper/*.jar
+
+# =============================================================================
+#  IDE
+# =============================================================================
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+nbproject/
+
+# =============================================================================
+#  OS
+# =============================================================================
+.DS_Store
+Thumbs.db
+*~
+.directory
+
+# =============================================================================
+#  Logs, crash dumps and local scratch
+# =============================================================================
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+.attach_pid*
+/tmp/
+scratch/
+
+# =============================================================================
+#  Secrets
+# =============================================================================
+#  This project needs no configuration and ships no .env.example. The rules are
+#  here so that a credential can never be committed by accident if that changes.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+id_rsa*

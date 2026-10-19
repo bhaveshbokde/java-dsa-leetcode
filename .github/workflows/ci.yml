@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel an in-progress run when the branch is pushed again; the older result
+# is of no interest once newer code exists.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and test (Java ${{ matrix.java }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # 21 is the project's target. 25 is the next LTS; running it here
+        # surfaces forward-compatibility breakage early rather than at upgrade
+        # time. A failure on 25 alone is informative, not fatal to the branch.
+        java: ['21', '25']
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+          cache: maven          # caches ~/.m2, keyed on pom.xml
+
+      # The wrapper is committed, so CI uses exactly the Maven version the
+      # project was developed against rather than whatever the runner ships.
+      - name: Build, check style and run tests
+        run: ./mvnw -B -ntp clean verify
+
+      - name: Upload test reports
+        if: always()            # reports matter most when the step failed
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports-java-${{ matrix.java }}
+          path: target/surefire-reports/
+          retention-days: 7
+
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-report-java-${{ matrix.java }}
+          path: target/site/jacoco/
+          retention-days: 7
+
+      - name: Summarise results
+        if: always()
+        run: |
+          echo "### Build summary (Java ${{ matrix.java }})" >> "$GITHUB_STEP_SUMMARY"
+          if [ -d target/surefire-reports ]; then
+            total=$(grep -ho 'tests="[0-9]*"' target/surefire-reports/*.xml \
+                    | grep -o '[0-9]*' | paste -sd+ - | bc)
+            fails=$(grep -ho 'failures="[0-9]*"' target/surefire-reports/*.xml \
+                    | grep -o '[0-9]*' | paste -sd+ - | bc)
+            errors=$(grep -ho 'errors="[0-9]*"' target/surefire-reports/*.xml \
+                     | grep -o '[0-9]*' | paste -sd+ - | bc)
+            echo "- Tests: ${total}, failures: ${fails}, errors: ${errors}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- No test reports were produced." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+  # A separate job so that a formatting or secret problem is reported
+  # independently of the test result.
+  hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Private study notes must not be committed
+        run: |
+          if git ls-files | grep -E '^docs/' ; then
+            echo "::error::Files under docs/ are personal study notes and must stay local."
+            exit 1
+          fi
+          echo "No files under docs/ are tracked."
+
+      - name: No build output or IDE files tracked
+        run: |
+          if git ls-files | grep -E '^(target/|build/|out/)|\.(iml|class|jar)$' ; then
+            echo "::error::Build output or IDE files are tracked."
+            exit 1
+          fi
+          echo "No build output or IDE files are tracked."
+
+      - name: No obvious credentials in tracked files
+        run: |
+          if git grep -nIE '(password|secret|api[_-]?key|token)[[:space:]]*=[[:space:]]*["'"'"'][A-Za-z0-9+/=_-]{12,}' -- . ; then
+            echo "::error::A possible credential literal is present."
+            exit 1
+          fi
+          echo "No credential-shaped literals found."

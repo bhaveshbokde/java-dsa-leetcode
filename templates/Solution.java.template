@@ -1,0 +1,31 @@
+package com.bhavesh.dsa.TOPIC;
+
+/**
+ * LeetCode NNN - PROBLEM TITLE (Easy|Medium|Hard).
+ *
+ * <p>One sentence stating exactly what the method returns.
+ *
+ * <p>Then the part that matters: the observation that makes the efficient
+ * solution possible. Not a restatement of the code - the reason the code is
+ * shaped the way it is. If a simpler approach exists, say what it costs and why
+ * this one is preferred.
+ *
+ * <p>Call out anything a reader would otherwise get wrong: an overflow guard, a
+ * comparison that must be strict, an ordering of statements that is load-bearing.
+ *
+ * <p>Time O(?), auxiliary space O(?).
+ */
+public final class ClassName {
+
+    private ClassName() {
+    }
+
+    public static int solve(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            // Decide deliberately: return a neutral value, or throw. Do not
+            // return a sentinel that a caller could mistake for an answer.
+            throw new IllegalArgumentException("nums must be non-empty");
+        }
+        throw new UnsupportedOperationException("not implemented");
+    }
+}

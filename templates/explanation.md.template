@@ -1,0 +1,58 @@
+# NNN. Problem Title
+
+<!--
+  LOCAL ONLY. docs/ is gitignored; see .gitignore and the README's Scope section.
+  Replace every placeholder. Generic prose that would fit any problem is the
+  failure mode to avoid - every section should be about *this* algorithm.
+-->
+
+## A. Problem overview
+- **LeetCode NNN** · **Topic:** … · **Difficulty:** … · **Pattern:** …
+- **Statement in my own words:** …
+- **Input:** types and constraints that actually matter (ranges, sign, duplicates).
+- **Output:** …
+- **Example:** a small one, with the answer.
+
+## B. Intuition
+How to think about it *before* writing code. What observation makes the
+efficient approach possible? Why is this pattern the right fit?
+
+## C. Brute-force approach
+The straightforward method, its complexity, and why it is inadequate here.
+If no brute force is meaningful, say so and explain why rather than inventing one.
+
+## D. Optimal approach
+The chosen algorithm: key observation, the pattern, why it is correct, the
+implementation decisions that are load-bearing, and any invariant relied upon.
+State the trade-off if a different approach wins on a different axis.
+
+## E. Dry run
+A worked example, step by step. For loops, a table of how the pointers,
+window bounds or accumulators change. For recursion or DP, the call tree or the
+filled table. Pick an example that exercises the subtle case, not the easy one.
+
+## F. Java implementation walkthrough
+The responsibilities of each method, the important variables, loop and boundary
+conditions, and the pitfalls. This must describe the code that is actually in
+the repository.
+
+## G. Correctness proof
+Why the answer is right - an invariant, an induction, or an exchange argument.
+
+## H. Complexity analysis
+Time; auxiliary space; total space if it differs materially; the reason for each
+bound; best/average/worst where they differ. Do not confuse input storage with
+auxiliary space.
+
+## I. Edge cases
+A table of the awkward inputs and how the implementation handles each.
+
+## J. Interview discussion
+Likely questions, common mistakes, follow-ups, variants, alternative approaches
+and their trade-offs, and what to say out loud while solving it.
+
+## K. Related problems
+Links to other problems in this repository that share the pattern.
+
+## L. Revision summary
+> **Insight:** … **Pattern:** … **Complexity:** … **Trap:** …

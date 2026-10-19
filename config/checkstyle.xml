@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+    "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+    A deliberately small ruleset.
+
+    The Sun and Google defaults enforce Javadoc on every public member and a
+    particular brace and indentation style. On a repository whose point is
+    algorithmic clarity, those rules generate hundreds of violations that say
+    nothing about correctness, and the usual response is to lower the severity
+    until the whole check becomes decoration.
+
+    What is enforced here is the subset that catches genuine problems: names
+    that do not follow Java conventions, star imports, unused imports,
+    fall-through in switch, equals without hashCode, and empty catch blocks.
+-->
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <property name="fileExtensions" value="java"/>
+
+    <!-- No tabs: mixed indentation renders differently in every tool. -->
+    <module name="FileTabCharacter">
+        <property name="eachLine" value="true"/>
+    </module>
+
+    <module name="LineLength">
+        <property name="max" value="120"/>
+        <property name="ignorePattern" value="^\s*\*.*https?://"/>
+    </module>
+
+    <module name="TreeWalker">
+
+        <!-- ===================== Naming ===================== -->
+        <module name="PackageName">
+            <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
+        </module>
+        <module name="TypeName"/>
+        <module name="MethodName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="ParameterName"/>
+        <module name="ConstantName"/>
+
+        <!-- ===================== Imports ===================== -->
+        <module name="AvoidStarImport"/>
+        <module name="UnusedImports"/>
+        <module name="RedundantImport"/>
+
+        <!-- ===================== Real defects ===================== -->
+        <!-- An empty catch block silently discards a failure. -->
+        <module name="EmptyCatchBlock"/>
+        <!-- Missing break in switch is a classic source of wrong answers. -->
+        <module name="FallThrough"/>
+        <!-- Overriding one without the other breaks every hash-based collection. -->
+        <module name="EqualsHashCode"/>
+        <!-- if (a = b) instead of if (a == b). -->
+        <module name="InnerAssignment"/>
+        <!-- A braceless if body is where the next edit introduces a bug. -->
+        <module name="NeedBraces"/>
+        <module name="UpperEll"/>
+        <module name="ModifierOrder"/>
+
+        <!-- ===================== Whitespace basics ===================== -->
+        <module name="WhitespaceAfter">
+            <property name="tokens" value="COMMA, SEMI, TYPECAST"/>
+        </module>
+        <module name="NoWhitespaceBefore">
+            <property name="tokens" value="COMMA, SEMI, POST_DEC, POST_INC"/>
+        </module>
+
+    </module>
+</module>

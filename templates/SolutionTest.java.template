@@ -1,0 +1,54 @@
+package com.bhavesh.dsa.TOPIC;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+import java.util.Random;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+class ClassNameTest {
+
+    @Test
+    @DisplayName("the example from the problem statement")
+    void leetCodeExample() {
+        assertEquals(0, ClassName.solve(new int[] {1, 2, 3}));
+    }
+
+    @Test
+    @DisplayName("empty, null and single-element inputs")
+    void degenerate() {
+        // Assert the documented behaviour, whatever it is - a value or a throw.
+    }
+
+    @Test
+    @DisplayName("duplicates, negatives and extreme values")
+    void awkwardValues() {
+        // Integer.MIN_VALUE and MAX_VALUE belong here whenever the solution
+        // does arithmetic. Several real bugs in this repository were found by
+        // exactly this test.
+    }
+
+    @Test
+    @DisplayName("matches a simple reference implementation on randomised inputs")
+    void matchesReference() {
+        // A fixed seed keeps failures reproducible. Never use an unseeded Random.
+        Random random = new Random(12345L);
+        for (int trial = 0; trial < 500; trial++) {
+            int[] nums = new int[1 + random.nextInt(12)];
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = random.nextInt(21) - 10;
+            }
+            assertEquals(reference(nums), ClassName.solve(nums.clone()),
+                    () -> "mismatch for " + Arrays.toString(nums));
+        }
+    }
+
+    /**
+     * Obviously-correct but slow implementation, used only as an oracle.
+     * It may be O(n^2) or worse - the randomised inputs are kept small.
+     */
+    private static int reference(int[] nums) {
+        throw new UnsupportedOperationException("not implemented");
+    }
+}
